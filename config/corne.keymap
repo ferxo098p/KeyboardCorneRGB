@@ -172,6 +172,15 @@
         };
     };
 
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(L)>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -189,7 +198,7 @@
                          &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT    &mo 2  &kp SPACE  &kp LEFT_BRACKET
             >;
 
-            label = "MAZZIO";
+            label = "KURUADMIN";
         };
 
         Number {
@@ -200,7 +209,7 @@
             //                      | ALT       | WIN           |     |          | ENT | N0  | .   |
 
             bindings = <
-&kp ESCAPE      &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &none         &none             &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &kp KP_DIVIDE    &kp DELETE
+&kp ESCAPE      &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &none         &new_macro        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &kp KP_DIVIDE    &kp DELETE
 &to 0           &kp LEFT_ARROW  &kp ENTER       &kp RIGHT_ARROW  &none         &none             &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS      &kp KP_MULTIPLY  &to 3
 &kp LEFT_SHIFT  &kp END         &kp DOWN_ARROW  &kp PG_DN        &none         &kp SCROLLLOCK    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER     &kp KP_NUMLOCK   &kp RIGHT_SHIFT
                                                 &kp LCTRL        &kp LEFT_WIN  &kp LEFT_ALT      &to 2            &kp KP_NUMBER_0  &kp KP_DOT
